@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "taller6"
+    }
+  },
+  "defaultProject": "taller6",
+  "cli": {
+    "analytics": "befa2c06-8d1f-4a7b-a1d9-19b739682b8d"
+  }
 }
