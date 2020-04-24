@@ -1,0 +1,18 @@
+<div style="padding: 6px" *ngFor="let post of posts; let i = index">
+  <mat-card class="example-card">
+    <mat-card-header>
+      <div mat-card-avatar class="example-header-image"></div>
+      <mat-card-title>{{getUsername(i)}}</mat-card-title>
+      <mat-card-subtitle>@{{post.idUser}}</mat-card-subtitle>
+      <mat-card-subtitle>Tweet since:{{post.createdAt}}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <p>
+        {{post.message}}
+      </p>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-stroked-button color="warn" (click)="deleteTweet(post.idPost)">DELETE</button>
+    </mat-card-actions>
+  </mat-card>
+</div>

@@ -1,0 +1,88 @@
+section {
+  display: table;
+  margin: 8px;
+}
+
+.example-label {
+  display: table-cell;
+  font-size: 14px;
+  margin-left: 8px;
+  width: 120px;
+}
+
+.example-button-row {
+  display: table-cell;
+}
+
+.example-button-row button {
+  display: table-cell;
+  margin-right: 8px;
+}
+
+.example-flex-container {
+  display: flex;
+  justify-content: space-between;
+  width: 480px;
+}
+
+.example-button-container {
+  display: flex;
+  justify-content: center;
+  width: 120px;
+}
+
+
+.card {
+  width: 300px;
+  top: 50px;
+  margin-left: 50%;
+  transform: translateX(-50%);
+  align-items: center;
+  justify-content: center;
+}
+
+.header-image {
+  text-align: center;
+  border-radius: 50%;
+  width: 55px;
+  height: 55px;
+  justify-content: center;
+  background-image: url('/assets/img/twitter.png');
+  background-size: cover;
+}
+
+
+.header-image span{
+  display: inline-block;
+  margin: 10px 10px 0 0;
+  padding: 1px 65px;
+}
+
+
+.full-width {
+  width: 100%;
+}
+
+.load {
+  background: white;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.load img {
+  width: 50%;
+}
+
+section {
+  display: table;
+  margin: 8px;
+}
+
+.container-twtter{
+  padding: 15px;
+  display: flex;
+  justify-content: center;
+}

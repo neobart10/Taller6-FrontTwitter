@@ -1,0 +1,57 @@
+<mat-toolbar color="primary">
+  <section>
+    <div class="header-image">
+      <span>{{user?.username}}</span>
+    </div>
+
+  </section>
+</mat-toolbar>
+
+
+<mat-toolbar style="justify-content: center; background-color: white">
+
+  <section>
+    <div class="example-button-row">
+      <div class="example-flex-container">
+        <div class="example-button-container">
+          <button mat-fab color="basic" aria-label="Example icon button with a delete icon" [routerLink]="['/twitter', user?.idUser]">
+            <mat-icon>house</mat-icon>
+          </button>
+        </div>
+
+        <div class="example-button-container">
+          <button mat-fab color="primary" aria-label="Example icon button with a delete icon" [routerLink]="['./mytweets', user?.idUser]">
+            <mat-icon>person</mat-icon>
+          </button>
+        </div>
+
+        <div class="example-button-container">
+          <button mat-fab color="primary" aria-label="Example icon button with a delete icon" [routerLink]="['./tweet', user?.idUser]">
+            <mat-icon>create</mat-icon>
+          </button>
+        </div>
+
+        <div class="example-button-container">
+          <button mat-fab color="primary" aria-label="Example icon button with a delete icon" [routerLink]="['./followers', user?.idUser]">
+            <mat-icon>people</mat-icon>
+          </button>
+        </div>
+
+        <div class="example-button-container">
+          <button mat-fab color="warn" aria-label="Example icon button with a delete icon" [routerLink]="['./my-profile', user?.idUser]">
+            <mat-icon>settings</mat-icon>
+          </button>
+        </div>
+
+
+      </div>
+    </div>
+  </section>
+
+</mat-toolbar>
+
+<mat-divider color="primary"></mat-divider>
+
+<div class="container-twtter">
+<router-outlet></router-outlet>
+</div>

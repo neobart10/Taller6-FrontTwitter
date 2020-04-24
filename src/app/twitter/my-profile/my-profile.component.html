@@ -1,0 +1,44 @@
+<mat-card class="card" *ngIf="user">
+  <mat-card-header style="flex-direction: column;">
+    <div mat-card-avatar class="header-image"></div>
+    <div style="align-self: center;">
+      <mat-card-title>Fake Twitter</mat-card-title>
+    </div>
+  </mat-card-header>
+
+  <div>
+    <mat-form-field class="full-width">
+      <mat-label>User</mat-label>
+      <input matInput placeholder="Ex. username1" name="username" [(ngModel)]="user.username"  #username="ngModel" required [errorStateMatcher]="matcher">
+      <mat-hint [ngStyle]="{color: 'red'}" *ngIf="errorRegister">User exist</mat-hint>
+      <mat-error *ngIf="username.hasError('required')">User is <strong>required</strong>
+      </mat-error>
+    </mat-form-field>
+  </div>
+
+  <div>
+    <mat-form-field class="full-width">
+      <mat-label>Pass</mat-label>
+      <input matInput type="password" placeholder="Ex. Pass1*" [(ngModel)]="user.pass" name="pass" #pass="ngModel" required [errorStateMatcher]="matcher">
+      <mat-error *ngIf="(pass.hasError('required'))">Pass is <strong>required</strong>
+      </mat-error>
+    </mat-form-field>
+  </div>
+
+  <div>
+    <mat-form-field class="full-width">
+      <mat-label>Confirm Pass</mat-label>
+      <input matInput type="password" [(ngModel)]="confirm" name="confirmPass" #confirmPass="ngModel" required [errorStateMatcher]="matcher">
+      <mat-hint [ngStyle]="{color: 'red'}" *ngIf="pass.value != confirmPass.value">Confirm pass</mat-hint>
+      <mat-error *ngIf="(confirmPass.hasError('required'))">Confirmpass is <strong>required</strong>
+      </mat-error>
+    </mat-form-field>
+  </div>
+
+
+  <mat-card-actions>
+    <button mat-stroked-button [routerLink]="['/twitter', user?.idUser]">CANCEL</button>
+    <button mat-stroked-button [disabled]="(username.invalid || pass.invalid || confirmPass.invalid || (pass.value != confirmPass.value))" color="primary"  (click)="onSave()">SAVE</button>
+    <button mat-stroked-button color="warn" (click)="onDelete()" style="float: right;">DELETE</button>
+  </mat-card-actions>
+</mat-card>
